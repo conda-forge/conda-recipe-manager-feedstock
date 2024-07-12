@@ -150,5 +150,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@schuylermartin45](https://github.com/schuylermartin45/)
+* [@conda-incubator/builds-tools](https://github.com/orgs/conda-incubator/teams/builds-tools)
 
