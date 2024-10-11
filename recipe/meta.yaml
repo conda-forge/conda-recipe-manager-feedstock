@@ -1,5 +1,5 @@
 {% set name = "conda-recipe-manager" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/conda-incubator/conda-recipe-manager/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: c64aab8c2503693a9ca59ff8eab0ca2d2ba5f3f1e858eac18785b5da97433836
+  sha256: 359c41863856f9bd85880d4316104ff344d5d7649bffd5841df02d5a22001758
 
 build:
   number: 0
@@ -31,6 +31,10 @@ requirements:
     - pyyaml
     - jsonschema
     - requests
+    - gitpython
+    - networkx
+    - matplotlib
+    - pygraphviz
 
 test:
   imports:
@@ -43,6 +47,7 @@ test:
     - pip
     - pytest
     - pytest-xdist
+    - pyfakefs
   commands:
     - pip check
     - python -m pytest -n auto tests/
@@ -56,7 +61,7 @@ about:
   summary: Helper tool for recipes on aggregate.
   description: |
     Renders local recipes, provides build orders, find outdated recipes.
-  doc_url: https://github.com/anaconda/conda-recipe-manager
+  doc_url: https://conda-incubator.github.io/conda-recipe-manager/index.html
   dev_url: https://github.com/anaconda/conda-recipe-manager
 
 extra:
