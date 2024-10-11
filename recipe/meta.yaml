@@ -67,6 +67,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - conda-incubator/builds-tools
     - schuylermartin45
     - beeankha
