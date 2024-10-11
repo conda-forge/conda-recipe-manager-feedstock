@@ -11,7 +11,7 @@ Summary: Helper tool for recipes on aggregate.
 
 Development: https://github.com/anaconda/conda-recipe-manager
 
-Documentation: https://github.com/anaconda/conda-recipe-manager
+Documentation: https://conda-incubator.github.io/conda-recipe-manager/index.html
 
 Renders local recipes, provides build orders, find outdated recipes.
 
@@ -150,5 +150,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@conda-incubator/builds-tools](https://github.com/orgs/conda-incubator/teams/builds-tools)
+* [@beeankha](https://github.com/beeankha/)
+* [@schuylermartin45](https://github.com/schuylermartin45/)
 
