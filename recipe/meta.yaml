@@ -48,6 +48,7 @@ test:
     - pytest
     - pytest-xdist
     - pyfakefs
+    - git  # Required for `gitpython` tests
   commands:
     - pip check
     - python -m pytest -n auto --ignore=tests/test_aux_files tests/
