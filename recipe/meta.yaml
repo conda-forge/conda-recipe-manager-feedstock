@@ -1,5 +1,6 @@
 {% set name = "conda-recipe-manager" %}
-{% set version = "0.3.4" %}
+{% set version = "0.4.0" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://github.com/conda-incubator/conda-recipe-manager/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: bae9b94a2e6fdba26c497bbecd94afcd554a0e71087d24e2659ded212f376168
+  sha256: 00ac7d36d2d63d7afa9be1b6f1c75f6340747b72fa143c0e5216427e06ddd633
 
 build:
   number: 0
@@ -19,12 +20,12 @@ build:
 
 requirements:
   host:
-    - python >=3.11
+    - python {{ python_min }}
     - pip
     - setuptools
     - wheel
   run:
-    - python >=3.11
+    - python >={{ python_min }}
     - click >=8.1.7
     - conda
     - jinja2
@@ -44,6 +45,7 @@ test:
   source_files:
     - tests/
   requires:
+    - python {{ python_min }}
     - pip
     - pytest
     - pytest-xdist
