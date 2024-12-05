@@ -1,5 +1,6 @@
 {% set name = "conda-recipe-manager" %}
 {% set version = "0.4.0" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -19,12 +20,12 @@ build:
 
 requirements:
   host:
-    - python >=3.11
+    - python {{ python_min }}
     - pip
     - setuptools
     - wheel
   run:
-    - python >=3.11
+    - python >={{ python_min }}
     - click >=8.1.7
     - conda
     - jinja2
@@ -44,6 +45,7 @@ test:
   source_files:
     - tests/
   requires:
+    - python {{ python_min }}
     - pip
     - pytest
     - pytest-xdist
