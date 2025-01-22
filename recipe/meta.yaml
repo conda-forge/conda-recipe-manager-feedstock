@@ -1,18 +1,18 @@
 {% set name = "conda-recipe-manager" %}
-{% set version = "0.3.4" %}
+{% set version = "0.4.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/conda-incubator/conda-recipe-manager/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: bae9b94a2e6fdba26c497bbecd94afcd554a0e71087d24e2659ded212f376168
+  url: https://github.com/conda-incubator/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 40071212e6838117d1d0cba3c0897a9fbd8541440bb789ee8fa430715bf63df7
 
 build:
-  number: 0 # trigger
-  script: pip install . --no-deps --no-build-isolation -vv
+  number: 0
   noarch: python
+  script: {{PYTHON}} -m pip install . --no-deps --no-build-isolation -vv
   entry_points:
     - conda-recipe-manager = conda_recipe_manager.commands.conda_recipe_manager:conda_recipe_manager
     - crm = conda_recipe_manager.commands.conda_recipe_manager:conda_recipe_manager
@@ -39,22 +39,37 @@ requirements:
 test:
   imports:
     - conda_recipe_manager.commands
+    - conda_recipe_manager.fetcher
+    - conda_recipe_manager.grapher
     - conda_recipe_manager.licenses
     - conda_recipe_manager.parser
+    - conda_recipe_manager.scanner
+    - conda_recipe_manager.utils
   source_files:
     - tests/
+    - recipe/meta.yaml
   requires:
     - pip
     - pytest
     - pytest-xdist
     - pyfakefs
     - git  # Required for `gitpython` tests
+    - yq
   commands:
     - pip check
+    - conda-recipe-manager --help
+    - crm --help
+    - crm bump-recipe --help
+    - crm convert --help
+    # Test the crm convert usage
+    - crm convert recipe/meta.yaml | [[ $(yq ".context.name") == '"conda-recipe-manager"' ]]  # [unix]
+    - crm graph --help
+    - crm patch --help
+    - crm rattler-bulk-build --help
     - python -m pytest -n auto --ignore=tests/test_aux_files tests/
 
 about:
-  home: https://github.com/anaconda/conda-recipe-manager
+  home: https://github.com/conda-incubator/conda-recipe-manager
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
@@ -63,9 +78,8 @@ about:
   description: |
     Renders local recipes, provides build orders, find outdated recipes.
   doc_url: https://conda-incubator.github.io/conda-recipe-manager/index.html
-  dev_url: https://github.com/anaconda/conda-recipe-manager
+  dev_url: https://github.com/conda-incubator/conda-recipe-manager
 
 extra:
   recipe-maintainers:
     - schuylermartin45
-    - beeankha
