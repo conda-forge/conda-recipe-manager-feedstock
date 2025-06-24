@@ -3,15 +3,15 @@ About conda-recipe-manager-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/conda-recipe-manager-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/anaconda/conda-recipe-manager
+Home: https://github.com/conda/conda-recipe-manager
 
-Package license: [BSD-3-Clause](https://github.com/anaconda/conda-recipe-manager/blob/main/LICENSE)
+Package license: [BSD-3-Clause](https://github.com/conda/conda-recipe-manager/blob/main/LICENSE)
 
 Summary: Helper tool for recipes on aggregate.
 
-Development: https://github.com/anaconda/conda-recipe-manager
+Development: https://github.com/conda/conda-recipe-manager
 
-Documentation: https://conda-incubator.github.io/conda-recipe-manager/index.html
+Documentation: https://conda.github.io/conda-recipe-manager/index.html
 
 Renders local recipes, provides build orders, find outdated recipes.
 
@@ -150,6 +150,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@beeankha](https://github.com/beeankha/)
 * [@schuylermartin45](https://github.com/schuylermartin45/)
 
