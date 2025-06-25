@@ -41,6 +41,7 @@ test:
   imports:
     - conda_recipe_manager
   source_files:
+    - .pytest.ini
     - tests/
   requires:
     - python {{ python_min }}
