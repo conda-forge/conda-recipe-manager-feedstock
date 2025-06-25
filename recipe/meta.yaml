@@ -49,7 +49,7 @@ test:
     - pytest
     - pytest-xdist
     - pytest-socket
-    - pyfakefs
+    - pyfakefs >=5.9.1
     - git  # Required for `gitpython` tests
   commands:
     - pip check
