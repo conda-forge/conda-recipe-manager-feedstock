@@ -11,7 +11,7 @@ source:
   sha256: c31206787e31de326ad023e66946928ddc54d4544aa9b2497e5e1c8be0ce4f84
 
 build:
-  number: 0
+  number: 1
   script: pip install . --no-deps --no-build-isolation -vv
   noarch: python
   entry_points:
@@ -70,3 +70,4 @@ about:
 extra:
   recipe-maintainers:
     - schuylermartin45
+    - msentissi
