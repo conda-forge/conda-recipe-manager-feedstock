@@ -1,5 +1,5 @@
 {% set name = "conda-recipe-manager" %}
-{% set version = "0.8.1" %}
+{% set version = "0.9.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/conda/conda-recipe-manager/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: c1b5eacf9dcea05892b93a2386db4158fcef395b452d67d3e20d7edb7e8dc47c
+  sha256: 476180dd73062bc833afb85b02d42a48511ac38468bf7a41e5464af4010dbd7a
 
 build:
   number: 0
@@ -36,6 +36,7 @@ requirements:
     - networkx
     - matplotlib-base
     - pygraphviz
+    - evalidate >=2.0.3,<3.0.0
 
 test:
   imports:
