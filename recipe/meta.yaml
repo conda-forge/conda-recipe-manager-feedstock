@@ -1,5 +1,5 @@
 {% set name = "conda-recipe-manager" %}
-{% set version = "0.9.0" %}
+{% set version = "0.9.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/conda/conda-recipe-manager/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 476180dd73062bc833afb85b02d42a48511ac38468bf7a41e5464af4010dbd7a
+  sha256: fe1b07e77f28a637d2db2881969e953cbd9ce4389394103fe13ddbc77b99a6c3
 
 build:
   number: 0
