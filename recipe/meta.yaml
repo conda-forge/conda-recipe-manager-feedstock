@@ -46,7 +46,7 @@ test:
     - pip
     - pytest
     - pytest-xdist
-    - pytest-socket >=0.7.0
+    - pytest-socket >=0.7.0,<0.8.0
     - pyfakefs >=6.0.0
     - git  # Required for `gitpython` tests
   commands:
