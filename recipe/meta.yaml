@@ -1,5 +1,5 @@
 {% set name = "conda-recipe-manager" %}
-{% set version = "0.10.5" %}
+{% set version = "0.10.6" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/conda/conda-recipe-manager/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 11e2306a7ed2573a275cb1b3eccfb6735b4d71166a37fc35baea071e9c58e798
+  sha256: ea07ccbe7195a0b7fe2f1651484f0df48bbba850283425706165f2c8e11df2f8
 
 build:
   number: 0
@@ -26,7 +26,7 @@ requirements:
     - wheel
   run:
     - python >={{ python_min }}
-    - click ==8.2.1
+    - click ==8.4.1
     - conda
     - jinja2
     - pyyaml
