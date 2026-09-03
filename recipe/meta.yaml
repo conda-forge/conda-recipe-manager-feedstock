@@ -11,7 +11,7 @@ source:
   sha256: ea07ccbe7195a0b7fe2f1651484f0df48bbba850283425706165f2c8e11df2f8
 
 build:
-  number: 0
+  number: 1
   script: pip install . --no-deps --no-build-isolation -vv
   noarch: python
   entry_points:
@@ -26,7 +26,7 @@ requirements:
     - wheel
   run:
     - python >={{ python_min }}
-    - click ==8.4.1
+    - click >=8.2.1,<=8.4.1
     - conda
     - jinja2
     - pyyaml
