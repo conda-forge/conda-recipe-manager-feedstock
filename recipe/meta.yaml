@@ -52,6 +52,8 @@ test:
   commands:
     - pip check
     - python -m pytest -n auto --ignore=tests/test_aux_files tests/
+    - conda-recipe-manager --help
+    - crm --help
 
 about:
   home: https://github.com/conda/conda-recipe-manager
